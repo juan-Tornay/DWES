@@ -9,9 +9,9 @@ function sevenboom(){
             console.log(i);
         }
     }
-}
+}   
+
+    sevenboom();
 
 
-
-sevenboom();
 
