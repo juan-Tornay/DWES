@@ -3,10 +3,11 @@ let objeto = {
     numer2: '10'
 };
  
-  function calculo(){
-    let cuenta = objeto.numero1 -objeto.numer2;
+    function calculo(){
+        
+         let cuenta = objeto.numero1 -objeto.numer2;
 
-    console.log(cuenta);
-  }
+         console.log(cuenta);
+    }
 
-  calculo();
+        calculo();
