@@ -1,0 +1,16 @@
+{
+  "name": "016nodejs",
+  "version": "1.0.0",
+  "main": "Ejercicio1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "juan tornay",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "winston": "^3.17.0"
+  }
+}
