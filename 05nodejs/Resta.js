@@ -1,6 +1,6 @@
 let objeto = {
-    numero1: '20',
-    numer2: '10'
+    numero1: '60',
+    numer2: '50'
 };
  
     function calculo(){
