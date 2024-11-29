@@ -1,18 +1,9 @@
 {
-  "name": "10nodejs",
+  "name": "06nodejs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "leer-archivo.js",
   "scripts": {
-    
-    
-    "start": "node index.js",
-  
     "test": "echo \"Error: no test specified\" && exit 1"
-    
-
-  
-  
-  
   },
   "author": "juan tornay iglesias",
   "license": "ISC",
