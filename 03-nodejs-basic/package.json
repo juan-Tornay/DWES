@@ -1,0 +1,11 @@
+{
+  "name": "03-nodejs-basic",
+  "version": "1.0.0",
+  "main": "fibonacci.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "juan tornay iglesias",
+  "license": "ISC",
+  "description": ""
+}
