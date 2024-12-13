@@ -12,7 +12,7 @@ console.log('Inicio del programa')
         let resultado = a + b
 
 
-        console.log('resultado intermedio' + resultado)
+        console.log('Este es el resultado intermedio' + resultado)
 
         resultado *= 2
         console.log('Resultado final', resultado)
