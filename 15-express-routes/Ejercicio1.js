@@ -1,7 +1,25 @@
-const http = require('http');
+const express = require ('expres');
 
-const server = http.createServer((req, res) => {
-     res.end();
-     });
 
-     server.listen(3000, '127.0.0.1');
+const server= express();
+
+
+
+server.get(' /header' , (req, res) =>   {
+
+          const { token } = req.headers;
+
+
+          if (!token) {
+               
+               return res.status(401).json({
+                   code: 401,
+                   error: 'Unauthorized',
+                   message: 'Error: Set a token to login',
+               });
+           }
+
+
+
+
+})
