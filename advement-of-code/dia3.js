@@ -1,0 +1,7 @@
+
+
+function organizarInventario(inventario){
+
+
+    return {}
+}
