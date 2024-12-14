@@ -1,16 +1,33 @@
 {
-    "name": "nodenpm",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "DWES"
-    },
-    "author": "juan tornay iglesias",
-    "license": "ISC"
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear:modules": "rimraf **/node_modules",
+    "clear:locks": "rimraf **/package-lock.json",
+    "clear": "npm run clear:modules && npm run clear:locks",
+    "clear:env": "rimraf **/.env",
+    "copy:env": "for d in workspaces/*; do cp ${d}/.env.template ${d}/.env; done",
+    "date": "node date.js",
+    "crear:files": "node createFiles.js crear:files",
+    "crear:js": "node createFiles.js crear:js",
+    "crear:carpeta": "node createFiles.js crear:carpeta",
+    "borrar": "node createFiles.js borrar",
+    "borrar:js": "node createFiles.js borrar:js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "luxon": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0",
+    "rimraf": "^3.0.0"
   }
-  
+}
