@@ -21,12 +21,12 @@ module.exports = logger;
 const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
-const logger = require('./utils/logger'); // Asegúrate de que la ruta sea correcta
+const logger = require('./utils/logger'); 
 
 const app = express();
-const PORT = 3001; // Cambia el puerto a 3001
+const PORT = 3001; 
 
-// Configurar Morgan para usar el logger de Winston
+
 app.use(morgan('combined', {
     stream: {
         write: (message) => logger.info(message.trim())

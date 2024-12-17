@@ -6,24 +6,25 @@ function timeout(x) {
     });
   }
   
+    
   async function init() {
-    const promises = [];
-    const results = [];
+      const promises = [];
+      const results = [];
+      
+      
+      for (let i = 0; i < 20; i++) {
+        const promise = timeout(i * 100).then(x => results.push({
+          index: i,
+          timeout: x
+        }));
+        promises.push(promise);
+      }
+      
     
+      await Promise.all(promises);
+      
     
-    for (let i = 0; i < 20; i++) {
-      const promise = timeout(i * 100).then(x => results.push({
-        index: i,
-        timeout: x
-      }));
-      promises.push(promise);
+      console.log(results);
     }
     
-   
-    await Promise.all(promises);
-    
-   
-    console.log(results);
-  }
-  
-  init();
+    init();

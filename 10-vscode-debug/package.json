@@ -15,9 +15,16 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch index.js",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/10-vscode-debug/ejercicio1.js"
+      "program": "${workspaceFolder}/10-vscode-debug/index.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Current File",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}"
     }
   ]
 }

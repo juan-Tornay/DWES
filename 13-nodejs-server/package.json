@@ -1,15 +1,52 @@
 {
-  "name": "13nodejs",
+  "name": "13-nodejs-server",
   "version": "1.0.0",
-  "main": "Server1.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "juan tornay iglesias",
-  "license": "ISC",
   "description": "",
+  "main": "src/server2.js",
+  "scripts": {
+    "start": "nodemon src/server2.js",
+    "lint": "eslint --ignore-pattern .gitignore .",
+    "lint:fix": "eslint --fix --ignore-pattern .gitignore ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-ava": "^15.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "nodemon": "^2.0.22"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ],
+    "plugins": [
+      "import",
+      "ava"
+    ],
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id"
+          ]
+        }
+      ],
+      "no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "next"
+        }
+      ]
+    }
+  },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.2"
   }
 }

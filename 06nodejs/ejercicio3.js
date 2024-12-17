@@ -1,64 +1,55 @@
-function decomposeUrl(url) {
-    const result = {
-        protocol: null,
-        ipAddress: null,
-        subDomain: null,
-        domainName: null,
-        folderTree: null,
-        targetFile: null,
-        argumentsFile: null
+function descomponerUrl(url) {
+    const resultado = {
+        protocolo: null,
+        direccionIp: null,
+        subDominio: null,
+        nombreDominio: null,
+        arbolDeCarpetas: null,
+        archivoObjetivo: null,
+        archivoDeArgumentos: null
     };
 
-            try {
-            
-                const parsedUrl = new URL(url);
+    try {
+        const urlParseada = new URL(url);
 
-                // Protocol
-                result.protocol = parsedUrl.protocol.replace(':', '');
+        resultado.protocolo = urlParseada.protocol.replace(':', '');
 
-                // Domain and subdomain
-                const hostnameParts = parsedUrl.hostname.split('.');
-                if (hostnameParts.length > 2) {
-                    result.subDomain = hostnameParts[0];
-                    result.domainName = hostnameParts.slice(1).join('.');
-                } else {
-                    result.subDomain = null;
-                    result.domainName = parsedUrl.hostname;
-                }
+        const partesHostname = urlParseada.hostname.split('.');
+        if (partesHostname.length > 2) {
+            resultado.subDominio = partesHostname[0];
+            resultado.nombreDominio = partesHostname.slice(1).join('.');
+        } else {
+            resultado.subDominio = null;
+            resultado.nombreDominio = urlParseada.hostname;
+        }
 
-                // Check for IP address (basic regex for IPv4)
-                const ipRegex = /^(\\d{1,3}\.){3}\d{1,3}$/;
-                if (ipRegex.test(parsedUrl.hostname)) {
-                    result.ipAddress = parsedUrl.hostname;
-                }
+        const regexIp = /^(\\d{1,3}\.){3}\d{1,3}$/;
+        if (regexIp.test(urlParseada.hostname)) {
+            resultado.direccionIp = urlParseada.hostname;
+        }
 
-                // Folder tree
-                const pathParts = parsedUrl.pathname.split('/').filter(part => part);
-                if (pathParts.length > 1) {
-                    result.folderTree = pathParts.slice(0, -1);
-                } else {
-                    result.folderTree = null;
-                }
+        const partesDeRuta = urlParseada.pathname.split('/').filter(parte => parte);
+        if (partesDeRuta.length > 1) {
+            resultado.arbolDeCarpetas = partesDeRuta.slice(0, -1).join('/');
+        } else {
+            resultado.arbolDeCarpetas = null;
+        }
 
-                // Target file
-                const lastPart = pathParts[pathParts.length - 1] || null;
-                if (lastPart && lastPart.includes('.')) {
-                    result.targetFile = lastPart;
-                } else {
-                    result.targetFile = lastPart;
-                }
+        const ultimaParte = partesDeRuta[partesDeRuta.length - 1] || null;
+        if (ultimaParte && ultimaParte.includes('.')) {
+            resultado.archivoObjetivo = ultimaParte;
+        } else {
+            resultado.archivoObjetivo = ultimaParte;
+        }
 
-                // Arguments file
-                result.argumentsFile = parsedUrl.search || null;
-            } 
-            
-                    catch (error) {
-                        console.error('Invalid URL:', error);
-                    }
+        resultado.archivoDeArgumentos = urlParseada.search || null;
+    } catch (error) {
+        console.error('URL inválida:', error);
+    }
 
-                    return result;
+    return resultado;
 }
 
-                        const url = "https://www.realbetisbalompie.es/entradas/?utm_source=gads&utm_medium=paid_search&utm_campaign=bt_ticketing_always_on_adsmurai&utm_id=bt_00&utm_content=texto&https://www.realbetisbalompie.es/entradas?utm_source=gads&utm_medium=paid_search&utm_campaign=bt_ticketing_always_on_adsmurai&utm_id=bt_00&utm_content=texto&gad_source=1&gclid=CjwKCAiA6aW6BhBqEiwA6KzDc2jyU2GAfrCFhqmgXxpHBxYayfiOqYEUJCr7U_rMaoS2v5ur75adrRoCnacQAvD_BwE";
+const url = "https://www.realbetisbalompie.es/entradas/?utm_source=gads&utm_medium=paid_search&utm_campaign=bt_ticketing_always_on_adsmurai&utm_id=bt_00&utm_content=texto&https://www.realbetisbalompie.es/entradas?utm_source=gads&utm_medium=paid_search&utm_campaign=bt_ticketing_always_on_adsmurai&utm_id=bt_00&utm_content=texto&gad_source=1&gclid=CjwKCAiA6aW6BhBqEiwA6KzDc2jyU2GAfrCFhqmgXxpHBxYayfiOqYEUJCr7U_rMaoS2v5ur75adrRoCnacQAvD_BwE";
 
-                        console.log(decomposeUrl(url));
+console.log(descomponerUrl(url));

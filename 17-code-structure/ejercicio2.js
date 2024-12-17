@@ -14,7 +14,7 @@ function fibonacci(n) {
             const n= parseInt(req.params.numer, 10);
 
             if(isNan(n) || n < 0){
-                return res.status(400).send('Invalid number');
+                return res.status(400).send('numero invalido');
             }
             const sequence = fibonacci(n);
             res.json(sequence);

@@ -11,8 +11,8 @@ function fibonacci(n){
 }
 
     function printFibonacciSequence(n){
-        const sequence = fibonacci(n);
-        console.log(sequence.join(','));
+        const secuencia = fibonacci(n);
+        console.log(secuencia.join(','));
     }
 
 
